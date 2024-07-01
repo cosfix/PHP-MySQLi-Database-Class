@@ -61,7 +61,7 @@ $data = Array (
         Array ('login' => 'user2',
                'customerId' => 10,
                'firstName' => 'Mike',
-               'lastName' => null,
+               'lastName' => NULL,
                'password' => $db->func('SHA1(?)',Array ("secretpassword2+salt")),
                'createdAt' => $db->now(),
                'updatedAt' => $db->now(),
@@ -312,7 +312,7 @@ if ($db->count != 2) {
     exit;
 }
 ///
-$db->where ("lastName", null, '<=>');
+$db->where ("lastName", NULL, '<=>');
 $r = $db->get("users");
 if ($db->count != 1) {
     echo "Invalid users count on null where()";
